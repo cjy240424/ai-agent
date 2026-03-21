@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: spring-ai-start
+
+  # 注意！ai 和 application 是平级的，都在 spring 的正下方缩进两个空格！
+  ai:
+    openai:
+      api-key: ${DASHSCOPE_API_KEY}
+      # 千万别忘了这行！这是骗过 Spring AI 连上阿里云的核心！
+      base-url: https://dashscope.aliyuncs.com/compatible-mode
+      chat:
+        options:
+          # 换成通义千问的模型，比如 qwen-plus
+          model: qwen3-32b
+          temperature: 1.0
+
+logging:
+  level:
+    org.springframework.ai.chat.client.advisor: DEBUG
+    com.cjy: DEBUG
