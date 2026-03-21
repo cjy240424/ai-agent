@@ -13,13 +13,13 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/blackChatTranslate")
+@RequestMapping("/api/v1/ai")
 @RequiredArgsConstructor
 public class BlackChatTranslateController {
 
     private final ChatClient chatClient;
 
-    @RequestMapping("/api/v1/ai/translate")
+    @RequestMapping("/translate")
     public ZhuanBaoResponse translate(String message){
         //1. 实例化转换器
         BeanOutputConverter<ZhuanBaoResponse> converter = new BeanOutputConverter<>(ZhuanBaoResponse.class);
