@@ -58,7 +58,7 @@ public class ChatHistoryServiceImpl implements ChatHistoryService {
             }
 
             // 判断这句话是谁说的
-            String role = msg.getMessageType() == MessageType.USER ? "user" : "assistant";
+            String role = msg.getMessageType().getValue(); //== MessageType.USER ? "user" : "assistant";
             // 提取纯文本内容
             String content = msg.getText();
 
