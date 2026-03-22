@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RequiredArgsConstructor
 @RestController
-@RequestMapping("//api/v1/agent/")
+@RequestMapping("/api/v1/agent")
 public class ReviewRiskController {
 
     private final ReviewRiskAgent agent;
@@ -18,7 +18,7 @@ public class ReviewRiskController {
     @GetMapping("/review/{userId}")
     public R<ReviewAnalysis> analyzeReview(
             @PathVariable String userId,
-            @RequestParam String reviewText
+            @RequestParam("reviewText") String reviewText
     ) {
         //调用接口，底层的代理对象会自动构建 Prompt、调用大模型、并反序列化 JSON
         Result<ReviewAnalysis> result = agent.analyzeReview(userId, reviewText);

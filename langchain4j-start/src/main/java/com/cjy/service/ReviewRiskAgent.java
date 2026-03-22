@@ -22,5 +22,5 @@ public interface ReviewRiskAgent {
     @UserMessage("请分析以下用户评论：\n\n --- \n {{reviewText}} \n ---")
     Result<ReviewAnalysis> analyzeReview(
             @MemoryId String userId,
-            @V("reviewText") String text); // 注意：这里直接返回 Result<Record> 对象！
+            @V("reviewText") String reviewText); // 注意：这里直接返回 Result<Record> 对象！
 }

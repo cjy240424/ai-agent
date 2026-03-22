@@ -16,3 +16,4 @@ langchain4j:
       log-requests: true
       log-responses: true
       base-url: https://dashscope.aliyuncs.com/compatible-mode
+
