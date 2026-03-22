@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: langchain-start
+
+logging:
+  level:
+#    org.springframework.ai.chat.client.advisor: DEBUG
+    com.cjy: DEBUG
+
+langchain4j:
+  open-ai:
+    chat-model:
+      api-key: ${DASHSCOPE_API_KEY}
+      model: qwen3-32b
+      temperature: 1.0
+      log-requests: true
+      log-responses: true
+      base-url: https://dashscope.aliyuncs.com/compatible-mode
