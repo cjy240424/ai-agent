@@ -11,9 +11,9 @@ langchain4j:
   open-ai:
     chat-model:
       api-key: ${DASHSCOPE_API_KEY}
-      model: qwen3-32b
+      model-name: qwen-plus
       temperature: 1.0
       log-requests: true
       log-responses: true
-      base-url: https://dashscope.aliyuncs.com/compatible-mode
+      base-url: https://dashscope.aliyuncs.com/compatible-mode/v1
 

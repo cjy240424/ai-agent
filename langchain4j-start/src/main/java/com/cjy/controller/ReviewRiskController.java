@@ -20,6 +20,8 @@ public class ReviewRiskController {
             @PathVariable String userId,
             @RequestParam("reviewText") String reviewText
     ) {
+        System.out.println("拿到的 userId 是: " + userId); // 👈 加上这句
+
         //调用接口，底层的代理对象会自动构建 Prompt、调用大模型、并反序列化 JSON
         Result<ReviewAnalysis> result = agent.analyzeReview(userId, reviewText);
 
