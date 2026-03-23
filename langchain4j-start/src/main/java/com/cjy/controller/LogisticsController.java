@@ -17,7 +17,7 @@ public class LogisticsController {
     @GetMapping("/logistics/{userId}")
     public R<String> orderQuery(
             @PathVariable String userId,
-            @RequestParam("orderId") String userMessage
+            @RequestParam("userMessage") String userMessage
     ) {
         log.info("拿到的 userId 是: " + userId); // 👈 添加这句
         // 1. 调用接口，底层的代理对象会自动构建 Prompt、调用大模型、并反序列化 JSON

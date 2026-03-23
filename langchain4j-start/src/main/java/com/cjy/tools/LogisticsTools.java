@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class LogisticsTools {
 
-    @Bean
+
     // 核心难点：这里的描述决定了大模型会不会调、懂不懂传什么参数！
     @Tool("根据订单号查询最新的物流状态轨迹。订单号通常是以 'ORD-' 开头的字符串。")
     public String getLogisticsInfo(
