@@ -15,6 +15,6 @@ public class CommonConfiguration {
     @Bean
     public ChatMemoryProvider chatMemoryProvider() {
         // 使用消息窗口记忆，最多保留最近 10 条消息
-        return memoryId -> MessageWindowChatMemory.withMaxMessages(10);
+        return memoryId -> MessageWindowChatMemory.withMaxMessages(20);
     }
 }

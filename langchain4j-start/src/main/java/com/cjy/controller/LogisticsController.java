@@ -2,6 +2,7 @@ package com.cjy.controller;
 
 import com.cjy.record.R;
 import com.cjy.service.LogisticsAgent;
+import com.cjy.tools.ResearchToolAndModelUse;
 import dev.langchain4j.service.Result;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -24,22 +25,7 @@ public class LogisticsController {
         Result<String> result = logisticsAgent.chat(userId, userMessage);
 
         // 2. 🛡️ 大厂必备：打印完整审计日志。同时监控“工具请求参数”与“工具底层真实返回值”
-        if (result.toolExecutions() != null && !result.toolExecutions().isEmpty()) {
-            result.toolExecutions().forEach(execution -> {
-                // 1. 获取大模型发出的“施工单” (上半场)
-                String toolName = execution.request().name();
-                String toolArgs = execution.request().arguments();
-
-                // 2. 获取底层 Java 方法真实查出的“数据结果” (下半场 - 新版 API 的杀手锏)
-                String toolResult = execution.result();
-
-                log.info("🤖 [Agent审计] 触发工具: {} | 提取参数: {} | 底层真实返回: {}",
-                        toolName, toolArgs, toolResult);
-            });
-        }
-
-        // 3. 获取调用背后的元数据
-        System.out.println("消耗的总 Token 数: " + result.tokenUsage().totalTokenCount());
+        ResearchToolAndModelUse.research( result);
 
         return R.success(result.content());
 
