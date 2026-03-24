@@ -10,13 +10,13 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @Slf4j
-@RequestMapping("//api/v1/agent")
+@RequestMapping("/api/v1/agent")
 @RequiredArgsConstructor
 public class RefundController {
 
     private final RefundAgent refundAgent;
 
-    @GetMapping("/refund/{userId}")
+    @GetMapping("/{userId}/refund")
     public R<String> refund(
             @PathVariable("userId") String userId,
             @RequestParam("userMessage") String userMessage
@@ -25,7 +25,7 @@ public class RefundController {
 
         Result<String> result = refundAgent.refund(userId, userMessage);
 
-        ResearchToolAndModelUse.research( result);
+        ResearchToolAndModelUse.research(result);
 
         return R.success(result.content());
 

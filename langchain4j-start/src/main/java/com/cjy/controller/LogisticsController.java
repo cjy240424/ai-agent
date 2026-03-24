@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.*;
 public class LogisticsController {
 
     private final LogisticsAgent logisticsAgent;
-    @GetMapping("/logistics/{userId}")
+    @GetMapping("/{userId}/logistics")
     public R<String> orderQuery(
             @PathVariable String userId,
             @RequestParam("userMessage") String userMessage

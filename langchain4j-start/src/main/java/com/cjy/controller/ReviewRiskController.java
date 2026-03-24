@@ -15,7 +15,7 @@ public class ReviewRiskController {
 
     private final ReviewRiskAgent agent;
 
-    @GetMapping("/review/{userId}")
+    @GetMapping("/{userId}/review")
     public R<ReviewAnalysis> analyzeReview(
             @PathVariable String userId,
             @RequestParam("reviewText") String reviewText
