@@ -2,6 +2,7 @@ package com.cjy.service;
 
 import dev.langchain4j.service.*;
 import dev.langchain4j.service.spring.AiService;
+import dev.langchain4j.service.spring.AiServiceWiringMode;
 
 @AiService
 public interface LogisticsAgent {

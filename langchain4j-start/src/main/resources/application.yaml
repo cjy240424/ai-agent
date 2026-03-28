@@ -17,3 +17,11 @@ langchain4j:
       log-responses: true
       base-url: https://dashscope.aliyuncs.com/compatible-mode/v1
 
+# 自定义 Milvus 云端配置
+my-milvus:
+  uri: https://in03-0fc259379e3398c.serverless.aws-eu-central-1.cloud.zilliz.com
+  token: 6f29eaefd8311ec5eecae19672608b7ec84b03fe27e661a17389e3b9e219b1a883a025a4bb2af9c06c0dd85d7879ed686f6b1103
+
+dashscope:
+  api-key: ${DASHSCOPE_API_KEY}  # 👈 替换为你的真实 API Key
+  base-url: https://dashscope.aliyuncs.com/compatible-mode/v1
