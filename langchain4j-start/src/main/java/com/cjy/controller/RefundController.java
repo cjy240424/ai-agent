@@ -1,7 +1,7 @@
 package com.cjy.controller;
 
 import com.cjy.record.R;
-import com.cjy.service.RefundAgent;
+import com.cjy.agent.RefundAgent;
 import com.cjy.tools.ResearchToolAndModelUse;
 import dev.langchain4j.service.Result;
 import lombok.RequiredArgsConstructor;

@@ -2,9 +2,8 @@ package com.cjy.controller;
 
 import com.cjy.record.R;
 import com.cjy.record.ReviewAnalysis;
-import com.cjy.service.ReviewRiskAgent;
+import com.cjy.agent.ReviewRiskAgent;
 import dev.langchain4j.service.Result;
-import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 

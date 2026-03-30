@@ -1,10 +1,9 @@
-package com.cjy.service;
+package com.cjy.agent;
 
 import dev.langchain4j.service.*;
 import dev.langchain4j.service.spring.AiService;
-import dev.langchain4j.service.spring.AiServiceWiringMode;
 
-@AiService
+
 public interface LogisticsAgent {
 
     @SystemMessage({

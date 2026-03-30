@@ -1,0 +1,11 @@
+### 1. 测试普通阻塞接口
+GET http://localhost:8080/api/v1/policy/cjy/ask?question=年假怎么休
+
+### 2. 测试 POST 灌库接口
+POST http://localhost:8080/api/v1/knowledge/ingest
+Content-Type: application/json
+
+{
+  "category": "hr_rule",
+  "content": "这是一段测试文本"
+}

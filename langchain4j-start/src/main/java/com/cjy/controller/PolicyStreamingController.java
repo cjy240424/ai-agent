@@ -1,6 +1,6 @@
 package com.cjy.controller;
 
-import com.cjy.service.PolicyStreamingAgent;
+import com.cjy.service.PolicyStreamingService;
 import dev.langchain4j.service.TokenStream;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;
@@ -15,18 +15,19 @@ import java.io.IOException;
 @CrossOrigin // 👑 加上这个，允许前端 HTML 直接调用！
 public class PolicyStreamingController {
 
-    private final PolicyStreamingAgent policyStreamingAgent;
+    private final PolicyStreamingService policyStreamingService;
 
     @GetMapping(value = "/{userId}/streamAsk", produces = "text/event-stream;charset=utf-8")
     public SseEmitter askStream(
             @PathVariable String userId,
-            @RequestParam String question
+            @RequestParam("question") String question,
+            @RequestParam("category") String category
     ){
         // 1. 造水管：强制设置超时时间为 5 分钟 (300000毫秒)，防止模型思考时被 Tomcat 误杀
         SseEmitter emitter = new SseEmitter(300000L);
 
         // 2. 启动流式引擎 (注意：这一步是异步的，主线程瞬间滑过)
-        TokenStream tokenStream = policyStreamingAgent.anwerser(userId, question);
+        TokenStream tokenStream = policyStreamingService.getDynamicPolicyStream(userId, question, category);
 
         // 3. 完美适配：将 AI 的心跳绑定到水管上
         tokenStream

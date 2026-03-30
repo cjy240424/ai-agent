@@ -1,7 +1,7 @@
 package com.cjy.controller;
 
 import com.cjy.record.R;
-import com.cjy.service.LogisticsAgent;
+import com.cjy.agent.LogisticsAgent;
 import com.cjy.tools.ResearchToolAndModelUse;
 import dev.langchain4j.service.Result;
 import lombok.RequiredArgsConstructor;

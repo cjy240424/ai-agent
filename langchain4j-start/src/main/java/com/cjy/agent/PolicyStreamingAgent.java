@@ -1,14 +1,11 @@
-package com.cjy.service;
+package com.cjy.agent;
 
-import dev.langchain4j.service.MemoryId;
-import dev.langchain4j.service.Result;
-import dev.langchain4j.service.SystemMessage;
-import dev.langchain4j.service.UserMessage;
+import dev.langchain4j.service.*;
 import dev.langchain4j.service.spring.AiService;
 import dev.langchain4j.service.spring.AiServiceWiringMode;
 
-@AiService
-public interface PolicyAgent {
+
+public interface PolicyStreamingAgent {
     @SystemMessage("""
     你是一个专业、严谨的公司内部规章制度专属AI助手。你的唯一职责是根据系统提供的检索上下文（Context）来准确回答用户的问题。
     
@@ -20,7 +17,7 @@ public interface PolicyAgent {
     
     牢记核心铁律：宁可回答“不知道”，也绝对不可制造虚假信息！
     """)
-    Result<String> anwerser(
+    TokenStream anwerser(
             @MemoryId String userId,
             @UserMessage String userMessage
     );

@@ -47,8 +47,8 @@ public class KnowledgeServiceImpl implements KnowledgeService {
              throw new RuntimeException("请上传有效的 PDF 文件！");
         }
 
-        // FileSystemDocumentLoader 充当物理钥匙，结合 pdfParser 将字节流转化为结构化的 Document 对象
         String fileName = path.getFileName().toString().toLowerCase();
+        // FileSystemDocumentLoader 充当物理钥匙，结合 pdfParser 将字节流转化为结构化的 Document 对象
         DocumentParser parser;
 
         if (fileName.endsWith(".pdf")) {

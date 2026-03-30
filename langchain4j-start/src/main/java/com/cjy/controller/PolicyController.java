@@ -1,7 +1,7 @@
 package com.cjy.controller;
 
 import com.cjy.record.R;
-import com.cjy.service.PolicyAgent;
+import com.cjy.agent.PolicyAgent;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
