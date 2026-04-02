@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/spring-ai-start/spring-ai-start.iml" filepath="$PROJECT_DIR$/spring-ai-start/spring-ai-start.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-boot-newStart/spring-boot-newStart.iml" filepath="$PROJECT_DIR$/spring-boot-newStart/spring-boot-newStart.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-test/springboot-test.iml" filepath="$PROJECT_DIR$/springboot-test/springboot-test.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="springboot-aiagent-test" />
+        <module name="langchain4j-start" />
+        <module name="ai-agent" />
+        <module name="spring-ai-start" />
+        <module name="springboot-test" />
+        <module name="spring-boot-newStart" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="ai-agent" options="-parameters" />
+      <module name="langchain4j-start" options="-parameters" />
+      <module name="spring-ai-start" options="-parameters" />
+      <module name="spring-boot-newStart" options="-parameters" />
+      <module name="springboot-aiagent-test" options="-parameters" />
+      <module name="springboot-test" options="-parameters" />
+    </option>
+  </component>
+</project>
